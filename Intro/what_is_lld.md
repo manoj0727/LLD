@@ -1,109 +1,133 @@
-LLD(Low Level Design)
-it majorly focus on classes and objects within the system
+# What is Low Level Design (LLD)?
 
-types
-hld,lld,actual code
+## Introduction
 
-goal of lld is to 
-1. write clean code
-2. code should be flexible and maintainable
-3. code should be easy to text
+**Low Level Design (LLD)** focuses on the internal implementation details of a system - specifically on **classes, objects, and their interactions**.
 
-all pattern solve specific problem
-we have to understand those problem already solved
-for example you have to design parking patern you are comming with solution 
-so knowing patern is ok but things are not repeative thats matter 
+---
 
-   categories are
-   1. Creational
-      -> it control the object creation
-      -> various type of creational patterns are
-      singleton
-      builder -> complete object complete in different steps
-      factory
-      abstract factory
-      object pool
-      prototype
+## Types of Design
 
-  2. Structural
-      -> it focus on how different classes are arranged together so that the bigger problem ca solved flexible in most flexible way
-     various pattern are
-     1. decorator
-     2. proxy
-     3. composite
-     4. adapter
-     5. bridge
-     6. facade
-     7. flyweight
+| Level | Focus | Output |
+|-------|-------|--------|
+| **HLD** (High Level Design) | System architecture, components | Architecture diagrams, tech stack |
+| **LLD** (Low Level Design) | Classes, objects, relationships | Class diagrams, code structure |
+| **Actual Code** | Implementation | Working code |
 
-  3. Behavioral
-     It focus how different object interact and communicate with each other
-     how skelton behave is all guided by behavioral pattern
+```
+HLD (What components?) → LLD (How classes interact?) → Code (Implementation)
+```
 
-  various pattern
-  1. state
-  2. stratogy
-  3. observer
-  4. chain of responsibility
-  5. template
-  6. iterator
-  7. interpreter
-  8. command
-  9. visitor
-  10. mediator
-  11. memento
-  12. null object
+---
 
-Has-a and is-a-Relationship
+## Goals of LLD
 
-is-a = this is nothing but an inheritance
+| Goal | Description |
+|------|-------------|
+| **Clean Code** | Readable, well-organized, follows conventions |
+| **Flexible** | Easy to modify without breaking existing features |
+| **Maintainable** | Easy to understand and update over time |
+| **Testable** | Easy to write unit tests |
 
-vehicle -> is a 2 wheeler , is a 4 wheelar
+---
 
-has-a = showa a link between 2 objects
-house has rooms
-library has books
+## Design Patterns Overview
 
-association -> general term for has-a relationship
+Design patterns are **proven solutions** to common software design problems. Instead of reinventing the wheel, we use these battle-tested approaches.
 
-weak relationship (aggregation)
-it knows about it don't add or remove any 
+> "Knowing patterns is good, but understanding WHEN to apply them is what matters."
 
-strong relationship (composition)
-existance of one object is dependent on another
-also take care creation and managing 
+---
 
-here you need complete code like machine code 
+## Three Categories of Design Patterns
 
-many companies not provide code so you need to know about uml
+### 1. Creational Patterns
+**Focus:** How objects are created
 
-so we have to code also 
-instead of remembring so always going has-a relationship because it has parent child relationship
+| Pattern | Purpose | Use Case |
+|---------|---------|----------|
+| **Singleton** | Only one instance exists | Database connection, Logger |
+| **Factory** | Create objects without exposing creation logic | Creating different types of objects |
+| **Builder** | Build complex objects step by step | Creating objects with many parameters |
+| **Abstract Factory** | Factory of factories | Creating families of related objects |
+| **Prototype** | Clone existing objects | When object creation is expensive |
+| **Object Pool** | Reuse expensive objects | Database connections, Thread pools |
 
-so go with uml 
+---
 
-that it
+### 2. Structural Patterns
+**Focus:** How classes are arranged/composed together
 
+| Pattern | Purpose | Use Case |
+|---------|---------|----------|
+| **Adapter** | Convert interface to another | Integrating incompatible systems |
+| **Decorator** | Add behavior dynamically | Adding features without changing class |
+| **Proxy** | Control access to object | Lazy loading, access control |
+| **Facade** | Simple interface to complex system | Simplifying API |
+| **Composite** | Treat group as single object | Tree structures, UI components |
+| **Bridge** | Separate abstraction from implementation | Platform independence |
+| **Flyweight** | Share common data | Memory optimization |
 
+---
 
+### 3. Behavioral Patterns
+**Focus:** How objects interact and communicate
 
-  
+| Pattern | Purpose | Use Case |
+|---------|---------|----------|
+| **Strategy** | Swap algorithms at runtime | Payment methods, sorting algorithms |
+| **Observer** | Notify multiple objects of changes | Event systems, notifications |
+| **State** | Change behavior based on state | Vending machine, document workflow |
+| **Command** | Encapsulate request as object | Undo/Redo, task queuing |
+| **Template** | Define skeleton, let subclass fill details | Frameworks, algorithms |
+| **Iterator** | Access elements sequentially | Collections, custom iterators |
+| **Chain of Responsibility** | Pass request along chain | Logging, request handling |
+| **Mediator** | Centralize complex communications | Chat rooms, air traffic control |
+| **Memento** | Save/restore object state | Undo functionality |
+| **Visitor** | Add operations without changing classes | Compiler, document export |
+| **Interpreter** | Interpret grammar/language | SQL parsing, expression evaluation |
+| **Null Object** | Provide default behavior | Avoid null checks |
 
+---
 
+## UML Diagrams
 
+In interviews, you may need to represent your design using **UML (Unified Modeling Language)** instead of writing actual code.
 
+### Key UML Relationships:
+```
+──────────────────────────────────────────────
+|  Arrow Type       |  Meaning              |
+──────────────────────────────────────────────
+|  ───────▷         |  Inheritance (is-a)   |
+|  - - - -▷         |  Implements interface |
+|  ───────◇         |  Aggregation (has-a)  |
+|  ───────◆         |  Composition (owns)   |
+|  ─────────        |  Association          |
+──────────────────────────────────────────────
+```
 
+---
 
+## Summary
 
+```
+LLD = Classes + Objects + Their Relationships
 
+Goals:
+├── Clean Code
+├── Flexible
+├── Maintainable
+└── Testable
 
+Design Patterns:
+├── Creational (Object Creation)
+├── Structural (Class Arrangement)
+└── Behavioral (Object Interaction)
+```
 
+---
 
-
-
-
-
-
-
-      
-      
+## Next Steps
+- Learn [SOLID Principles](../L1/01_solid_principle.md)
+- Understand [Is-A vs Has-A Relationships](../L2/strategy_Design.md)
